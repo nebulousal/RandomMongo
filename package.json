@@ -1,0 +1,18 @@
+{
+  "name": "randommongo",
+  "version": "1.0.1",
+  "description": "Populate a mongo collection with random data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongodb"
+  ],
+  "author": "Alain Nisam <alain@yourmlssearch.com>",
+  "license": "MIT",
+  "dependencies": { 
+    "lorem-ipsum": "*",
+    "mongodb": "*"
+  }
+}
