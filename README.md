@@ -1,6 +1,6 @@
 # RandomMongo
 
-**V1.0.1- Initial push**
+**V1.0.4- Initial push**
 
 Example:
 ```
