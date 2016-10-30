@@ -1,7 +1,3 @@
-exports.printMsg = function() {
-  console.log("This is a message from the demo package");
-}
-
 exports.populateRandomMongo = function(count,options) {
 	var MongoClient = require('mongodb').MongoClient;
 	var loremIpsum = require('lorem-ipsum');
