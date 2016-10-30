@@ -1,6 +1,6 @@
 {
   "name": "randommongo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Populate a mongo collection with random data",
   "main": "index.js",
   "scripts": {
@@ -14,5 +14,9 @@
   "dependencies": { 
     "lorem-ipsum": "*",
     "mongodb": "*"
+  },
+  "repository": { 
+    "type" : "git",
+    "url" : "https://github.com/nebulousal/RandomMongo"
   }
 }
