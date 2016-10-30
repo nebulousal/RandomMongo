@@ -20,8 +20,7 @@ exports.populateRandomMongo = function(count,options) {
 		    var col = db.collection(options.coll);
 
 		    // Initialize the Ordered Batch
-		    // You can use initializeUnorderedBulkOp to initialize Unordered Batch
-		    var batch = col.initializeOrderedBulkOp();
+		    var batch = col.initializeUnorderedBulkOp();
 
 			for (var i in records) {
 				batch.insert(records[i]);
@@ -38,6 +37,7 @@ exports.populateRandomMongo = function(count,options) {
 				process.stdout.clearLine();
 				process.stdout.cursorTo(0);
 				process.stdout.write('Completed in: ' + (end - start));
+				console.log('');
 				console.log('Done');
 		    });
 		});
@@ -65,15 +65,6 @@ exports.populateRandomMongo = function(count,options) {
 	}
 
 	function generateRandomDataValue(format){
-		/*Boolean
-		Date
-		Number
-		Simple Data Type
-		String
-		String List, Multi
-		String List, Single
-		Timestamp*/
-
 		var format = format || 'string';
 		switch(format) {
 			case 'Date':
@@ -104,13 +95,6 @@ exports.populateRandomMongo = function(count,options) {
 			count:randomNumber,
 			units:'words'
 		});
-		return str;
-
-		var alphabet = 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z, ,.,!,$,%',
-			str = '';
-		for (var i = 0; i < Math.floor((Math.random()*1000)+1); i++){
-			str += alphabet.split(',')[ Math.floor(Math.random() * alphabet.split(',').length) + 1 ];
-		}
 		return str;
 	}
 
