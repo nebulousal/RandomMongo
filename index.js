@@ -2,13 +2,20 @@ exports.populateRandomMongo = function(count,options) {
 	var MongoClient = require('mongodb').MongoClient;
 	var loremIpsum = require('lorem-ipsum');
 
+	var count = count || 100;
+	var options = options || {};
+	if(!options.db) options.db = 'test';
+	if(!options.coll) options.coll = 'RandomData';
+	if(!options.MongoURL) options.MongoURL = 'mongodb://127.0.0.1:27017/';
+	if(!options.createIndex) options.createIndex = '';
+
 	function populateRandomMongo(count,options) {
 		var count = count || 100,
 			options = options || {db:'test',coll:'RandomData'},
 			records = generateRandomDataRecords(count),
 			start = new Date();
 
-		var theInsert = MongoClient.connect("mongodb://127.0.0.1:27017/" + options.db, function(err, db) {
+		var theInsert = MongoClient.connect(options.MongoURL + options.db, function(err, db) {
 		    // Get the collection
 		    var col = db.collection(options.coll);
 
